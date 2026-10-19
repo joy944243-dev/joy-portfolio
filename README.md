@@ -12,6 +12,7 @@ Portfolio of **Reaz Mahamud Joy** — focused on working with AI tools, learning
 
 - **Dark / Light theme toggle** — saved in `localStorage`, so the choice persists between visits
 - **Animated background** — floating gradient orbs with a subtle grid overlay
+- **Services** — AI content & editing and 1-year home tuition experience
 - **Photo Gallery** — 16 nature & animal photos with a click-to-zoom lightbox
 - **Video section** — HTML5 player with poster image and metadata
 - **Cat Gallery** — 10 cat photos, same lightbox experience
@@ -34,7 +35,7 @@ joy-portfolio/
 
 ## Sections
 
-Hero · About · Skills · Photo Gallery · Video · Cat Gallery · Personal Information · Contact
+Hero · About · Skills · Services · Photo Gallery · Video · Cat Gallery · Personal Information · Contact
 
 ## Run Locally
 
