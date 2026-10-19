@@ -26,6 +26,11 @@ Portfolio of **Reaz Mahamud Joy** — focused on working with AI tools, learning
 joy-portfolio/
 ├── index.html      # Entire website (HTML + CSS + JS)
 ├── logo.png        # Personal "Joy Sheikh" logo
+├── logo-transparent.png   # Background-removed version of the logo
+├── favicon.ico     # Transparent "JS" monogram favicon (16–256 px)
+├── favicon.png     # 256 px PNG icon
+├── favicon-512.png # High-res icon
+├── apple-touch-icon.png
 ├── README.md
 ├── Reaz_Mahamud_Joy_CV.pdf
 ├── animals/        # 16 gallery photos
