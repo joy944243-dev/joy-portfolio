@@ -17,7 +17,7 @@ Portfolio of **Reaz Mahamud Joy** — focused on working with AI tools, learning
 - **Video section** — HTML5 player with poster image and metadata
 - **Cat Gallery** — 10 cat photos, same lightbox experience
 - **Personal info & contact** — phone link, location, and downloadable CV (PDF)
-- **Fully responsive** — works on mobile, tablet, and desktop
+- **Fully responsive** — mobile-first layout with a collapsible hamburger menu, fluid grids, and touch-friendly spacing
 - **Lazy-loaded images** — fast first paint on slow connections
 
 ## Project Structure
