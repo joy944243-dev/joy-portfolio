@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reaz Mahamud Joy | Portfolio</title>
+<link rel="icon" href="logo.png">
+<meta name="description" content="Portfolio of Reaz Mahamud Joy - entry-level professional with computer and communication skills.">
+<script>
+  (function(){
+    var t = localStorage.getItem('joy-theme');
+    if(t) document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<style>
+  :root{
+    --bg:#0f172a;
+    --bg-alt:#111c33;
+    --card:#16233d;
+    --text:#e2e8f0;
+    --muted:#94a3b8;
+    --accent:#38bdf8;
+    --accent-2:#22c55e;
+    --border:#24344f;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    background:
+      radial-gradient(1100px 600px at 88% -5%,rgba(56,189,248,.12),transparent 55%),
+      radial-gradient(900px 520px at 2% 95%,rgba(34,197,94,.10),transparent 55%),
+      linear-gradient(180deg,#060b16 0%,#0f172a 22%,#0b1326 58%,#070d1d 100%);
+    background-attachment:fixed;
+    color:var(--text);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+
+  .bg-grid{
+    position:fixed;inset:0;z-index:-2;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(56,189,248,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(56,189,248,.05) 1px,transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 25%,transparent 80%);
+    mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 25%,transparent 80%);
+  }
+  .orb{
+    position:fixed;border-radius:50%;filter:blur(95px);z-index:-2;pointer-events:none;
+    animation:orbFloat 20s ease-in-out infinite;
+  }
+  .orb-1{width:440px;height:440px;top:-140px;left:-120px;
+    background:radial-gradient(circle,rgba(56,189,248,.45),transparent 70%)}
+  .orb-2{width:400px;height:400px;bottom:-160px;right:-100px;
+    background:radial-gradient(circle,rgba(34,197,94,.40),transparent 70%);animation-delay:-7s}
+  .orb-3{width:300px;height:300px;top:42%;left:58%;
+    background:radial-gradient(circle,rgba(168,85,247,.32),transparent 70%);animation-delay:-13s}
+  @keyframes orbFloat{
+    0%,100%{transform:translate(0,0) scale(1)}
+    33%{transform:translate(36px,-28px) scale(1.06)}
+    66%{transform:translate(-28px,24px) scale(.95)}
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container{max-width:1000px;margin:0 auto;padding:0 22px}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,23,42,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{font-weight:700;letter-spacing:.5px;color:var(--text);display:flex;align-items:center;gap:10px}
+  .brand img{height:34px;width:auto;max-width:150px;border-radius:8px;object-fit:contain}
+  .hero-logo{height:64px;width:auto;max-width:260px;border-radius:12px;border:1px solid var(--border);margin-bottom:22px;display:block;object-fit:contain}
+  .nav ul{display:flex;gap:20px;list-style:none;flex-wrap:wrap}
+  .nav a{color:var(--muted);font-size:.93rem}
+  .nav a:hover{color:var(--accent);text-decoration:none}
+
+  .hero{
+    padding:90px 0 80px;
+    position:relative;
+    background:
+      radial-gradient(800px 380px at 12% 0%,rgba(56,189,248,.28),transparent 62%),
+      radial-gradient(700px 360px at 88% 8%,rgba(168,85,247,.20),transparent 62%),
+      radial-gradient(560px 320px at 55% 100%,rgba(34,197,94,.16),transparent 60%);
+    border-bottom:1px solid var(--border);
+  }
+  .hero::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+    background:linear-gradient(90deg,transparent,var(--accent),var(--accent-2),transparent);
+    opacity:.7;
+  }
+  .hero .tag{
+    display:inline-block;padding:5px 13px;border:1px solid var(--accent);
+    border-radius:999px;color:var(--accent);font-size:.8rem;letter-spacing:1.5px;
+    text-transform:uppercase;margin-bottom:18px;
+  }
+  .hero h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.15;color:var(--text)}
+  .hero h1 span{color:var(--accent)}
+  .hero p.sub{margin-top:14px;font-size:1.1rem;color:var(--muted);max-width:640px}
+  .cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:12px 24px;border-radius:10px;
+    font-weight:600;font-size:.95rem;transition:.2s;
+  }
+  .btn-primary{background:var(--accent);color:#082f49}
+  .btn-primary:hover{background:#7dd3fc;text-decoration:none}
+  .btn-ghost{border:1px solid var(--border);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+  section{padding:64px 0;border-bottom:1px solid var(--border);position:relative}
+  section:nth-of-type(even){background:rgba(17,28,51,.55)}
+  .section-title{
+    font-size:1.6rem;color:var(--text);margin-bottom:8px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .section-title::before{
+    content:"";width:34px;height:3px;background:var(--accent);border-radius:3px;
+  }
+  .section-sub{color:var(--muted);margin-bottom:32px;max-width:700px}
+
+  .grid{display:grid;gap:20px}
+  .grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .grid-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+
+  .card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);padding:24px;transition:.2s;
+  }
+  .card:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .card h3{color:var(--text);font-size:1.08rem;margin-bottom:6px}
+  .card .meta{color:var(--accent);font-size:.85rem;font-weight:600;letter-spacing:.5px;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:.95rem}
+  .card ul{margin:8px 0 0 18px;color:var(--muted);font-size:.95rem}
+
+  .skills{display:flex;flex-wrap:wrap;gap:12px}
+  .skill{
+    background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.35);
+    color:#bae6fd;padding:9px 18px;border-radius:999px;font-size:.92rem;
+  }
+
+  .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px;margin-bottom:34px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+  .stat b{display:block;font-size:1.9rem;color:var(--accent)}
+  .stat span{color:var(--muted);font-size:.87rem}
+
+  .two-col{display:grid;grid-template-columns:1.4fr 1fr;gap:34px}
+  @media(max-width:760px){.two-col{grid-template-columns:1fr}}
+
+  .info-list{list-style:none}
+  .info-list li{
+    display:flex;justify-content:space-between;gap:14px;
+    padding:11px 0;border-bottom:1px dashed var(--border);font-size:.95rem;
+  }
+  .info-list li span:first-child{color:var(--muted)}
+  .info-list li span:last-child{color:var(--text);text-align:right}
+
+  .lang{display:flex;align-items:center;justify-content:space-between;
+    padding:14px 18px;background:var(--card);border:1px solid var(--border);
+    border-radius:10px;margin-bottom:12px}
+  .lang b{color:var(--text)}
+  .lang span{color:var(--muted);font-size:.9rem}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+  .gitem{
+    position:relative;overflow:hidden;border-radius:var(--radius);
+    border:1px solid var(--border);background:var(--card);cursor:pointer;aspect-ratio:4/3;
+  }
+  .gitem img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
+  .gitem:hover img{transform:scale(1.06)}
+  .gitem figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;
+    font-size:.85rem;color:#fff;background:linear-gradient(transparent,rgba(2,6,23,.85));
+  }
+  .lightbox{
+    position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
+    background:rgba(2,6,23,.92);padding:20px;cursor:zoom-out;
+  }
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:94vw;max-height:88vh;border-radius:10px;border:1px solid var(--border)}
+  .lightbox .close{position:absolute;top:18px;right:24px;font-size:2rem;color:#cbd5e1;line-height:1}
+
+  .video-card{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+    overflow:hidden;max-width:860px;
+  }
+  .video-card video{width:100%;display:block;background:#000;max-height:70vh}
+  .video-card .vmeta{padding:16px 20px}
+  .video-card .vmeta h3{color:var(--text);font-size:1.05rem;margin-bottom:4px}
+  .video-card .vmeta p{color:var(--muted);font-size:.9rem}
+
+  .contact-box{
+    background:linear-gradient(135deg,rgba(56,189,248,.14),rgba(34,197,94,.1));
+    border:1px solid var(--border);border-radius:var(--radius);
+    padding:34px;text-align:center;
+  }
+  .contact-box h3{color:var(--text);font-size:1.35rem;margin-bottom:8px}
+  .contact-box p{color:var(--muted);margin-bottom:22px}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .chip{
+    background:var(--card);border:1px solid var(--border);color:var(--text);
+    padding:11px 20px;border-radius:10px;font-size:.93rem;
+  }
+  .chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+  footer{padding:26px 0;text-align:center;color:var(--muted);font-size:.87rem}
+
+  .theme-btn{
+    background:var(--card);border:1px solid var(--border);color:var(--text);
+    border-radius:999px;width:40px;height:40px;font-size:1.05rem;cursor:pointer;
+    transition:.2s;flex-shrink:0;
+  }
+  .theme-btn:hover{border-color:var(--accent);transform:rotate(20deg)}
+
+  html[data-theme="light"]{
+    --bg:#eef2f8;--bg-alt:#e7edf6;--card:#ffffff;--text:#0f172a;--muted:#51627c;
+    --accent:#0284c7;--accent-2:#16a34a;--border:#d7e1ee;
+  }
+  html[data-theme="light"] body{
+    background:
+      radial-gradient(1100px 600px at 88% -5%,rgba(14,165,233,.16),transparent 55%),
+      radial-gradient(900px 520px at 2% 95%,rgba(34,197,94,.14),transparent 55%),
+      linear-gradient(180deg,#f6f9ff 0%,#eef2f8 28%,#f2f7f3 62%,#eef3fb 100%);
+  }
+  html[data-theme="light"] header{background:rgba(248,250,252,.92)}
+  html[data-theme="light"] section:nth-of-type(even){background:rgba(255,255,255,.6)}
+  html[data-theme="light"] .skill{background:rgba(2,132,199,.10);border-color:rgba(2,132,199,.35);color:#0369a1}
+  html[data-theme="light"] .orb{opacity:.45}
+  html[data-theme="light"] .bg-grid{
+    background-image:
+      linear-gradient(rgba(2,132,199,.08) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(2,132,199,.08) 1px,transparent 1px);
+  }
+  html[data-theme="light"] .btn-primary{color:#fff}
+</style>
+</head>
+<body>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="orb orb-1" aria-hidden="true"></div>
+<div class="orb orb-2" aria-hidden="true"></div>
+<div class="orb orb-3" aria-hidden="true"></div>
+
+<header>
+  <div class="container nav">
+    <div class="brand"><img src="logo.png" alt="Joy Sheikh logo">REAZ MAHAMUD JOY</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#cats">Cats</a></li>
+        <li><a href="#personal">Info</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-btn" id="themeBtn" title="Toggle dark / light theme">🌙</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <img class="hero-logo" src="logo.png" alt="Joy Sheikh logo">
+    <span class="tag">Entry-Level Professional</span>
+    <h1>Working with <span>AI</span> — Learning, Writing &amp; Editing</h1>
+    <p class="sub">A motivated undergraduate exploring modern AI tools — learning something new every day, writing content, and editing documents, images, and videos with creativity and attention to detail.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="Reaz_Mahamud_Joy_CV.pdf" download>Download CV</a>
+      <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-sub">A quick snapshot of who I am and what I bring.</p>
+    <div class="stat-row">
+      <div class="stat"><b>Rajbari</b><span>Sadar, Rajbari, Bangladesh</span></div>
+      <div class="stat"><b>Bangla &amp; English</b><span>Typing &amp; Communication</span></div>
+      <div class="stat"><b>MS Office</b><span>Word · Excel · PowerPoint</span></div>
+      <div class="stat"><b>AI Tools</b><span>Always Learning</span></div>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Career Objective</h3>
+        <p>To grow in a professional environment where honesty, dedication, teamwork, and continuous improvement are valued, and to contribute my computer, typing, and communication skills from day one.</p>
+      </div>
+      <div class="card">
+        <h3>What I Offer</h3>
+        <ul>
+          <li>Proficient MS Word &amp; Excel documentation</li>
+          <li>Bangla &amp; English computer typing</li>
+          <li>Internet browsing &amp; web research</li>
+          <li>Clear communication and learner support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Computer Skills</h2>
+    <p class="section-sub">Hands-on tools from coursework, training, and self-directed learning.</p>
+    <div class="skills">
+      <span class="skill">Microsoft Word</span>
+      <span class="skill">Microsoft Excel</span>
+      <span class="skill">Computer Typing (Bangla)</span>
+      <span class="skill">Computer Typing (English)</span>
+      <span class="skill">Internet Browsing</span>
+      <span class="skill">Web Research</span>
+      <span class="skill">MS PowerPoint</span>
+      <span class="skill">AI Tools &amp; Learning</span>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:34px">
+      <div class="card">
+        <h3>Training &amp; Certifications</h3>
+        <div class="meta">Youth Development Department (Jubo Unnayan)</div>
+        <p>6-month MS Office training covering MS Word, Excel &amp; PowerPoint.</p>
+        <p style="margin-top:10px">Successfully passed the written assessment for an Artificial Intelligence (AI) course.</p>
+      </div>
+      <div class="card">
+        <h3>Languages</h3>
+        <div class="lang"><b>Bengali</b><span>Native — reading, writing &amp; speaking</span></div>
+        <div class="lang" style="margin-bottom:0"><b>English</b><span>Basic — understanding &amp; communication</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <h2 class="section-title">Photo Gallery</h2>
+    <p class="section-sub">Animals, nature and everyday moments — 16 photos. Click any photo to view full size.</p>
+    <div class="gallery">
+      <figure class="gitem"><img src="animals/Elephant_crossing_road_20261018115658.jpg" alt="Elephant crossing road" loading="lazy"><figcaption>Elephant crossing road</figcaption></figure>
+      <figure class="gitem"><img src="animals/Elephant_crossing_road_20261018115658_2.jpg" alt="Elephant crossing road" loading="lazy"><figcaption>Elephant on the road</figcaption></figure>
+      <figure class="gitem"><img src="animals/Elephant_crossing_road_in_nature_20261018115658.jpg" alt="Elephant in nature" loading="lazy"><figcaption>Elephant in nature</figcaption></figure>
+      <figure class="gitem"><img src="animals/Elephant_crossing_road_natural_view_20261018115658.jpg" alt="Elephant natural view" loading="lazy"><figcaption>Natural view</figcaption></figure>
+      <figure class="gitem"><img src="animals/Dolphins_playing_in_ocean_20261018115658.jpg" alt="Dolphins playing in ocean" loading="lazy"><figcaption>Dolphins in the ocean</figcaption></figure>
+      <figure class="gitem"><img src="animals/Dolphins_playing_in_ocean_20261018115658_2.jpg" alt="Dolphins playing in ocean" loading="lazy"><figcaption>Dolphins playing</figcaption></figure>
+      <figure class="gitem"><img src="animals/Dolphins_playing_in_water_20261018115658.jpg" alt="Dolphins playing in water" loading="lazy"><figcaption>Playing in water</figcaption></figure>
+      <figure class="gitem"><img src="animals/Dolphins_swimming_in_ocean_20261018115658.jpg" alt="Dolphins swimming in ocean" loading="lazy"><figcaption>Swimming in the ocean</figcaption></figure>
+      <figure class="gitem"><img src="animals/Animals_forming_relationships_20261018115658.jpg" alt="Animals forming relationships" loading="lazy"><figcaption>Animals forming relationships</figcaption></figure>
+      <figure class="gitem"><img src="animals/Make_animal_relationship_picture_20261018115658.jpg" alt="Animal relationship" loading="lazy"><figcaption>Animal relationship</figcaption></figure>
+      <figure class="gitem"><img src="animals/Make_animal_relationship_picture_20261018115658_2.jpg" alt="Animal relationship" loading="lazy"><figcaption>Animal friendship</figcaption></figure>
+      <figure class="gitem"><img src="animals/Make_animal_relationship_pictures_20261018115658.jpg" alt="Animal relationship" loading="lazy"><figcaption>Animal bond</figcaption></figure>
+      <figure class="gitem"><img src="animals/Man_rides_bike_on_road_20261018115658.jpg" alt="Man rides bike on road" loading="lazy"><figcaption>Man rides bike on road</figcaption></figure>
+      <figure class="gitem"><img src="animals/Man_riding_a_bike_20261018115658.jpg" alt="Man riding a bike" loading="lazy"><figcaption>Man riding a bike</figcaption></figure>
+      <figure class="gitem"><img src="animals/Man_riding_motorcycle_20261018115658.jpg" alt="Man riding motorcycle" loading="lazy"><figcaption>Man riding motorcycle</figcaption></figure>
+      <figure class="gitem"><img src="animals/bike_not_cycle_20261018115658.jpg" alt="Bike not cycle" loading="lazy"><figcaption>Bike, not cycle</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="video">
+  <div class="container">
+    <h2 class="section-title">Video</h2>
+    <p class="section-sub">A short clip from my collection — 23 seconds.</p>
+    <div class="video-card">
+      <video controls preload="metadata" poster="animals/Dolphins_playing_in_ocean_20261018115658.jpg">
+        <source src="videos/Untitled_Scene_10-19.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="vmeta">
+        <h3>Untitled Scene</h3>
+        <p>MP4 · 19.9 MB · 00:23 · Recorded 19 Oct 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cats">
+  <div class="container">
+    <h2 class="section-title">Cat Gallery</h2>
+    <p class="section-sub">10 cat photos from my collection — click a photo for full size.</p>
+    <div class="gallery">
+      <figure class="gitem"><img src="cats/black_cat.jpg" alt="Black cat" loading="lazy"><figcaption>Black cat</figcaption></figure>
+      <figure class="gitem"><img src="cats/black_fluffy_cat.jpg" alt="Black fluffy cat" loading="lazy"><figcaption>Black fluffy cat</figcaption></figure>
+      <figure class="gitem"><img src="cats/black_white_cat.jpg" alt="Black and white cat" loading="lazy"><figcaption>Black &amp; white cat</figcaption></figure>
+      <figure class="gitem"><img src="cats/brown_caracal.png" alt="Brown caracal" loading="lazy"><figcaption>Brown caracal</figcaption></figure>
+      <figure class="gitem"><img src="cats/brown_tabby_white.jpg" alt="Brown tabby and white cat" loading="lazy"><figcaption>Brown tabby &amp; white</figcaption></figure>
+      <figure class="gitem"><img src="cats/brown_white_tabby.jpg" alt="Brown and white tabby" loading="lazy"><figcaption>Brown &amp; white tabby</figcaption></figure>
+      <figure class="gitem"><img src="cats/dilute_calico.jpg" alt="Dilute calico cat" loading="lazy"><figcaption>Dilute calico</figcaption></figure>
+      <figure class="gitem"><img src="cats/orange_tabby_cat.jpg" alt="Orange tabby cat" loading="lazy"><figcaption>Orange tabby</figcaption></figure>
+      <figure class="gitem"><img src="cats/tortoiseshell_cat.jpg" alt="Tortoiseshell cat" loading="lazy"><figcaption>Tortoiseshell</figcaption></figure>
+      <figure class="gitem"><img src="cats/white_orange_tail.jpg" alt="White cat with orange tail" loading="lazy"><figcaption>White with orange tail</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="personal">
+  <div class="container">
+    <h2 class="section-title">Personal Information</h2>
+    <div class="two-col">
+      <div>
+        <ul class="info-list">
+          <li><span>Full Name</span><span>Reaz Mahamud Joy</span></li>
+          <li><span>Date of Birth</span><span>14 June 2006</span></li>
+          <li><span>Nationality</span><span>Bangladeshi</span></li>
+          <li><span>Gender</span><span>Male</span></li>
+          <li><span>Marital Status</span><span>Single</span></li>
+          <li><span>Mobile</span><span>01771381736</span></li>
+          <li><span>Address</span><span>Kazibadha, Matipara-7700, Rajbari Sadar, Rajbari</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Declaration</h3>
+        <p style="margin-top:8px">I hereby declare that the information provided in this CV is true and correct to the best of my knowledge.</p>
+        <p style="margin-top:16px;color:#fff;font-weight:600">— Reaz Mahamud Joy</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-box">
+      <h3>Let's work together</h3>
+      <p>Open to entry-level opportunities, internships, and training roles.</p>
+      <div class="contact-links">
+        <a class="chip" href="tel:+8801771381736">Call: 01771381736</a>
+        <a class="chip" href="https://www.google.com/maps/search/Rajbari+Sadar,+Rajbari,+Bangladesh" target="_blank" rel="noopener">Rajbari Sadar, Rajbari</a>
+        <a class="chip" href="Reaz_Mahamud_Joy_CV.pdf" download>Download CV (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Reaz Mahamud Joy · Portfolio</div>
+</footer>
+
+<div class="lightbox" id="lightbox"><span class="close">&times;</span><img src="" alt="Full size photo"></div>
+
+<script>
+  const box = document.getElementById('lightbox');
+  const boxImg = box.querySelector('img');
+  document.querySelectorAll('.gitem').forEach(item => {
+    item.addEventListener('click', () => {
+      boxImg.src = item.querySelector('img').src;
+      box.classList.add('open');
+    });
+  });
+  box.addEventListener('click', () => box.classList.remove('open'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') box.classList.remove('open'); });
+
+  const themeBtn = document.getElementById('themeBtn');
+  const root = document.documentElement;
+  function setThemeIcon(){
+    themeBtn.textContent = root.getAttribute('data-theme') === 'light' ? '☀️' : '🌙';
+  }
+  setThemeIcon();
+  themeBtn.addEventListener('click', () => {
+    const light = root.getAttribute('data-theme') !== 'light';
+    if (light) root.setAttribute('data-theme', 'light'); else root.removeAttribute('data-theme');
+    localStorage.setItem('joy-theme', light ? 'light' : 'dark');
+    setThemeIcon();
+  });
+</script>
+
+</body>
+</html>
